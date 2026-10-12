@@ -1,0 +1,29 @@
+{
+  "project_info": {
+    "project_number": "884782892255",
+    "project_id": "lifemaxxing-c4206",
+    "storage_bucket": "lifemaxxing-c4206.firebasestorage.app"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:884782892255:android:6f2becd5f1fab8910bd56a",
+        "android_client_info": {
+          "package_name": "com.example.lifemaxxing"
+        }
+      },
+      "oauth_client": [],
+      "api_key": [
+        {
+          "current_key": "AIzaSyDYKqWApvokMmkpg_nYPnbgRZPPhh3icDM"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": []
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
