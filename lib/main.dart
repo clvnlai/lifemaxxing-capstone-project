@@ -3,8 +3,7 @@ import 'package:firebase_core/firebase_core.dart';
 import 'package:flutter/material.dart';
 import 'package:lifemaxxing/firebase_options.dart';
 import 'package:lifemaxxing/screens/auth_screen.dart';
-import 'package:lifemaxxing/screens/home_screen.dart';
-
+import 'package:lifemaxxing/screens/main_shell.dart';
 Future<void> main() async {
   WidgetsFlutterBinding.ensureInitialized();
   await Firebase.initializeApp(
@@ -42,8 +41,7 @@ class AuthGate extends StatelessWidget {
           return const Scaffold(
               body: Center(child: CircularProgressIndicator()));
         }
-        return snapshot.hasData ? const HomeScreen() : const AuthScreen();
-      },
+        return snapshot.hasData ? const MainShell() : const AuthScreen();      },
     );
   }
 }
