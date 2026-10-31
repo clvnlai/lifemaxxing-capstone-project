@@ -1,3 +1,4 @@
+import 'package:lifemaxxing/screens/plan_screen.dart';
 import 'package:flutter/material.dart';
 import 'package:lifemaxxing/screens/home_screen.dart';
 import 'package:lifemaxxing/services/auth_service.dart';
@@ -16,7 +17,7 @@ class _MainShellState extends State<MainShell> {
 
   static const _pages = <Widget>[
     HomeScreen(),
-    _Placeholder('Productivity & Academic'),
+    PlanScreen(),
     _Placeholder('Habits & Health'),
     _Placeholder('Finance'),
     _Placeholder('AI Insights'),
