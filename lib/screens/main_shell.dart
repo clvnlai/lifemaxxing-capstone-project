@@ -3,6 +3,7 @@ import 'package:flutter/material.dart';
 import 'package:lifemaxxing/screens/home_screen.dart';
 import 'package:lifemaxxing/services/auth_service.dart';
 import 'package:lifemaxxing/screens/wellness_screen.dart';
+import 'package:lifemaxxing/screens/finance_screen.dart';
 
 class MainShell extends StatefulWidget {
   const MainShell({super.key});
@@ -20,7 +21,7 @@ class _MainShellState extends State<MainShell> {
     HomeScreen(),
     PlanScreen(),
     WellnessScreen(),
-    _Placeholder('Finance'),
+    FinanceScreen(),
     _Placeholder('AI Insights'),
   ];
 
