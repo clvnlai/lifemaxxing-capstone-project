@@ -17,13 +17,13 @@ class _MainShellState extends State<MainShell> {
 
   static const _titles = ['Dashboard', 'Plan', 'Health', 'Finance', 'Insights'];
 
-  static const _pages = <Widget>[
-    HomeScreen(),
-    PlanScreen(),
-    WellnessScreen(),
-    FinanceScreen(),
-    _Placeholder('AI Insights'),
-  ];
+    List<Widget> get _pages => [
+        HomeScreen(onNavigate: (i) => setState(() => _index = i)),
+        const PlanScreen(),
+        const WellnessScreen(),
+        const FinanceScreen(),
+        const _Placeholder('AI Insights'),
+      ];
 
   @override
   Widget build(BuildContext context) {

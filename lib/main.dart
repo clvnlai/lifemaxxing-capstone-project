@@ -21,8 +21,17 @@ class LifeMaxxingApp extends StatelessWidget {
       title: 'LifeMaxxing',
       debugShowCheckedModeBanner: false,
       theme: ThemeData(
-        colorScheme: ColorScheme.fromSeed(seedColor: Colors.deepPurple),
+        colorScheme: ColorScheme.fromSeed(seedColor: const Color(0xFF2F6BFF)),
         useMaterial3: true,
+        scaffoldBackgroundColor: const Color(0xFFF4F6F9),
+        appBarTheme: const AppBarTheme(
+          backgroundColor: Color(0xFFF4F6F9),
+          surfaceTintColor: Colors.transparent,
+        ),
+        navigationBarTheme: const NavigationBarThemeData(
+          backgroundColor: Colors.white,
+          surfaceTintColor: Colors.transparent,
+        ),
       ),
       home: const AuthGate(),
     );
