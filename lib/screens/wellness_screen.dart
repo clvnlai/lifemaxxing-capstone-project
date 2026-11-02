@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:lifemaxxing/screens/habits_screen.dart';
+import 'package:lifemaxxing/screens/health_screen.dart';
 
 class WellnessScreen extends StatelessWidget {
   const WellnessScreen({super.key});
@@ -17,8 +18,7 @@ class WellnessScreen extends StatelessWidget {
             child: TabBarView(
               children: [
                 HabitsScreen(),
-                const Center(child: Text('Health logging (coming soon)')),
-              ],
+                HealthScreen()              ],
             ),
           ),
         ],
