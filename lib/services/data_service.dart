@@ -23,4 +23,9 @@ class DataService {
       _col.doc(id).update(data);
 
   Future<void> delete(String id) => _col.doc(id).delete();
+
+    Stream<QuerySnapshot<Map<String, dynamic>>> streamAll() => _col.snapshots();
+
+  Future<void> set(String id, Map<String, dynamic> data) =>
+      _col.doc(id).set(data);
 }
