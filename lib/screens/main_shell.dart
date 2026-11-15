@@ -4,6 +4,7 @@ import 'package:lifemaxxing/screens/home_screen.dart';
 import 'package:lifemaxxing/services/auth_service.dart';
 import 'package:lifemaxxing/screens/wellness_screen.dart';
 import 'package:lifemaxxing/screens/finance_screen.dart';
+import 'package:lifemaxxing/screens/insights_screen.dart';
 
 class MainShell extends StatefulWidget {
   const MainShell({super.key});
@@ -22,7 +23,7 @@ class _MainShellState extends State<MainShell> {
         const PlanScreen(),
         const WellnessScreen(),
         const FinanceScreen(),
-        const _Placeholder('AI Insights'),
+        const InsightsScreen(),
       ];
 
   @override
