@@ -5,6 +5,7 @@ import 'package:lifemaxxing/services/auth_service.dart';
 import 'package:lifemaxxing/screens/wellness_screen.dart';
 import 'package:lifemaxxing/screens/finance_screen.dart';
 import 'package:lifemaxxing/screens/insights_screen.dart';
+import 'package:lifemaxxing/screens/profile_screen.dart';
 
 class MainShell extends StatefulWidget {
   const MainShell({super.key});
@@ -32,6 +33,14 @@ class _MainShellState extends State<MainShell> {
       appBar: AppBar(
         title: Text(_titles[_index]),
         actions: [
+          IconButton(
+            icon: const Icon(Icons.person_outline),
+            tooltip: 'Profile',
+            onPressed: () => Navigator.push(
+              context,
+              MaterialPageRoute(builder: (_) => const ProfileScreen()),
+            ),
+          ),
           IconButton(
             icon: const Icon(Icons.logout),
             tooltip: 'Log out',

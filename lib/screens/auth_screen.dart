@@ -18,6 +18,7 @@ class _AuthScreenState extends State<AuthScreen> {
 
   bool _isLogin = true;
   bool _loading = false;
+  bool _consent = false;
   String? _error;
 
   @override
@@ -30,6 +31,10 @@ class _AuthScreenState extends State<AuthScreen> {
 
   Future<void> _submit() async {
     if (!_formKey.currentState!.validate()) return;
+    if (!_isLogin && !_consent) {
+      setState(() => _error = 'Please agree to the privacy notice to register.');
+      return;
+    }
     setState(() {
       _loading = true;
       _error = null;
@@ -52,6 +57,33 @@ class _AuthScreenState extends State<AuthScreen> {
     } finally {
       if (mounted) setState(() => _loading = false);
     }
+  }
+  void _showPrivacy() {
+    showDialog(
+      context: context,
+      builder: (ctx) => AlertDialog(
+        title: const Text('Privacy notice'),
+        content: const SingleChildScrollView(
+          child: Text(
+            'LifeMaxxing stores the tasks, assignments, habits, health logs and '
+            'spending records that you enter, together with your name and email. '
+            'Your data is kept in your private account, and only you can read it.\n\n'
+            'To create AI insights, a summary of your last 7 days is sent to '
+            "Google's Gemini service. Google's terms for this service may allow "
+            'submitted content to be used to improve its products, so please do '
+            'not enter sensitive real information while testing.\n\n'
+            'Insights are suggestions only, not medical or financial advice. '
+            'You can delete your account and all data at any time from the '
+            'Profile screen.',
+          ),
+        ),
+        actions: [
+          TextButton(
+              onPressed: () => Navigator.pop(ctx),
+              child: const Text('Close')),
+        ],
+      ),
+    );
   }
 
   String _message(String code) {
@@ -125,6 +157,28 @@ class _AuthScreenState extends State<AuthScreen> {
                         ? 'At least 6 characters'
                         : null,
                   ),
+
+                                    if (!_isLogin) ...[
+                    const SizedBox(height: 8),
+                    CheckboxListTile(
+                      value: _consent,
+                      onChanged: (v) => setState(() => _consent = v ?? false),
+                      controlAffinity: ListTileControlAffinity.leading,
+                      contentPadding: EdgeInsets.zero,
+                      title: const Text(
+                        'I agree to my data being collected and used to provide LifeMaxxing features.',
+                        style: TextStyle(fontSize: 13),
+                      ),
+                    ),
+                    Align(
+                      alignment: Alignment.centerLeft,
+                      child: TextButton(
+                        onPressed: _showPrivacy,
+                        child: const Text('Read privacy notice'),
+                      ),
+                    ),
+                  ],
+                  
                   if (_error != null) ...[
                     const SizedBox(height: 12),
                     Text(_error!,

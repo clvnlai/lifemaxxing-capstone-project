@@ -19,6 +19,7 @@ class AuthService {
       'name': name,
       'email': email,
       'createdAt': FieldValue.serverTimestamp(),
+      'consentAt': FieldValue.serverTimestamp(),
     });
   }
 
