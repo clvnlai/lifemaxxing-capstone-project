@@ -6,11 +6,11 @@ import 'package:lifemaxxing/services/data_service.dart';
 typedef DocList = List<Map<String, dynamic>>;
 typedef Data = Map<String, DocList>;
 
-const _bg = Color(0xFFF4F6F9);
+const _bg = Color(0xFFF4F5F7);
 const _border = Color(0xFFE6E9EF);
-const _blue = Color(0xFF2F6BFF);
-const _blueLight = Color(0xFFCFE0FB);
-const _ink = Color(0xFF1A1D24);
+const _blue = Color(0xFF14213D);
+const _blueLight = Color(0xFFD9DEE8);
+const _ink = Color(0xFF111418);
 const _muted = Color(0xFF6B7280);
 
 DateTime _dayOf(DateTime d) => DateTime(d.year, d.month, d.day);

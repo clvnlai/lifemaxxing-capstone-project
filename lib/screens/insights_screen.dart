@@ -49,14 +49,14 @@ class _InsightsScreenState extends State<InsightsScreen> {
     }
   }
 
-  Color _priorityColor(String p) {
+    Color _priorityColor(String p) {
     switch (p) {
       case 'high':
-        return Colors.red.shade600;
+        return const Color(0xFF111418);
       case 'low':
-        return Colors.green.shade600;
+        return const Color(0xFF9AA3B2);
       default:
-        return Colors.orange.shade700;
+        return const Color(0xFF5B6B85);
     }
   }
 

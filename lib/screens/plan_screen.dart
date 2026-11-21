@@ -2,14 +2,14 @@ import 'package:cloud_firestore/cloud_firestore.dart';
 import 'package:flutter/material.dart';
 import 'package:lifemaxxing/services/data_service.dart';
 
-const _bg = Color(0xFFF4F6F9);
+const _bg = Color(0xFFF4F5F7);
 const _border = Color(0xFFE6E9EF);
-const _blue = Color(0xFF2F6BFF);
-const _purple = Color(0xFF7C5CFC);
-const _red = Color(0xFFE5484D);
-const _ink = Color(0xFF1A1D24);
+const _blue = Color(0xFF14213D); // navy: tasks and done
+const _purple = Color(0xFF7C8AA5); // slate: assignments
+const _red = Color(0xFFB5453A); // overdue
+const _ink = Color(0xFF111418);
 const _muted = Color(0xFF6B7280);
-const _doneGrey = Color(0xFFC5CAD3);
+const _doneGrey = Color(0xFFC4C8D0);
 
 const _monthNames = [
   'January',
@@ -263,8 +263,7 @@ class _PlanScreenState extends State<PlanScreen> {
             label: Text(label),
             selected: _filter == i,
             showCheckmark: false,
-            selectedColor: const Color(0xFFCFE0FB),
-            backgroundColor: Colors.white,
+            selectedColor: const Color(0xFFD9DEE8),            backgroundColor: Colors.white,
             side: const BorderSide(color: _border),
             labelStyle: TextStyle(
               fontSize: 12,
